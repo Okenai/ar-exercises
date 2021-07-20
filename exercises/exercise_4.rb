@@ -15,5 +15,6 @@ stores = Store.create([
 
 @mens_stores = Store.where(mens_apparel: true)
 @mens_stores.each {|each| puts "name: #{each.name} and revenue: #{each.annual_revenue}"} 
+@womens_stores = Store.where("womens_apparel = ? AND annual_revenue < ? ", true, 1000000)
 
 puts "count after #{Store.count()}"
